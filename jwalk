@@ -1,4 +1,4 @@
-#!/usr/bin/env NODE_PATH=$NODE_PATH:. ./node_modules/.bin/coffee
+#!/usr/bin/env ./node_modules/.bin/coffee
 
 fs = require 'fs'
 zlib = require 'zlib'
