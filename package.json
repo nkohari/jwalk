@@ -1,0 +1,12 @@
+{
+	"name": "jwalk",
+	"version": "0.0.1",
+	"description": "json inspector",
+	"dependencies": {
+		"coffee-script": "1.4.0",
+		"colors": "0.6.0-1",
+		"filesize": "1.6.6",
+		"underscore": "1.4.2"
+	},
+	"engine": "node >= 0.8.x"
+}
