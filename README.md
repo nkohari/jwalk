@@ -4,8 +4,11 @@ The interface provided is a lot like a typical shell, with familiar commands lik
 More documentation (and fewer bugs) coming soon. In the meantime, install it via npm:
 
 ```
+npm install -g coffee-script
 npm install -g jwalk
 ```
+
+*NOTE:* Right now you need to install coffee-script globally for jwalk to work. Sorry about that. I'll fix it soon.
 
 And then run it like this:
 
