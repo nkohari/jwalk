@@ -1,6 +1,7 @@
 #!/usr/bin/env coffee
 
 fs = require 'fs'
+path = require 'path'
 zlib = require 'zlib'
 
 require 'colors'
