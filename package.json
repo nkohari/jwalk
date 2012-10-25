@@ -2,6 +2,7 @@
 	"name": "jwalk",
 	"version": "0.0.1",
 	"description": "command-line json inspector",
+	"preferGlobal": "true",
 	"dependencies": {
 		"coffee-script": "1.4.0",
 		"colors": "0.6.0-1",
