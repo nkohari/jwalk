@@ -1,6 +1,6 @@
 {
 	"name": "jwalk",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "command-line json inspector",
 	"preferGlobal": "true",
 	"repositories": {
