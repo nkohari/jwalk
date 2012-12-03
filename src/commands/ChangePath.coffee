@@ -32,7 +32,7 @@ class ChangePath extends Command
 		callback()
 
 	_resolvePointer: (context, path) ->
-		pointer = context.cache
+		pointer = context.tree
 		for token in path
 			return null unless pointer[token]?
 			pointer = pointer[token]
