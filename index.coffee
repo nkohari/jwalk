@@ -1,5 +1,3 @@
-#!/usr/bin/env coffee
-
 fs = require 'fs'
 path = require 'path'
 zlib = require 'zlib'
@@ -23,3 +21,4 @@ loader.load filename, (err, tree) ->
 		console.log "Error loading file: #{err}".red
 		process.exit(2)
 	prompt.run tree
+
