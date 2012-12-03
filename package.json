@@ -1,8 +1,12 @@
 {
 	"name": "jwalk",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "command-line json inspector",
 	"preferGlobal": "true",
+	"repositories": {
+		"type": "git",
+		"url": "http://github.com/nkohari/jwalk"
+	},
 	"bin": {
 		"jwalk": "bin/jwalk"
 	},
