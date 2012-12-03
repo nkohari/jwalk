@@ -3,6 +3,9 @@ Command = require './Command'
 
 class ChangePath extends Command
 
+	help: ->
+		'navigates through nodes in the tree'
+
 	autocomplete: (context, str, callback) ->
 		super unless _.isObject(context.pointer)
 		keys    = _.keys(context.pointer)

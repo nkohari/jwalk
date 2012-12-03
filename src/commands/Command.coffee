@@ -2,6 +2,9 @@ util = require 'util'
 
 class Command
 
+	help: ->
+		'(no help defined for this command)'
+
 	process: (context, args, callback) ->
 		callback()
 

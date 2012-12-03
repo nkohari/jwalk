@@ -8,7 +8,7 @@ loader = require './src/loader'
 prompt = require './src/prompt'
 
 if process.argv.length < 3
-	console.log "usage: #{path.basename(__filename)} <filename>"
+	console.log "usage: jwalk <filename>"
 	process.exit(1)
 
 filename = process.argv[2]

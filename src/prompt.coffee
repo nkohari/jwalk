@@ -4,12 +4,12 @@ _ = require 'underscore'
 
 commands = require './commands'
 
-exports.run = (cache) ->
+exports.run = (tree) ->
 
 	context =
 		path: []
-		pointer: cache
-		cache: cache
+		pointer: tree
+		tree: tree
 
 	getCompletions = (str, callback) ->
 		index = str.indexOf(' ')
@@ -27,7 +27,7 @@ exports.run = (cache) ->
 			callback null, [[], str]
 
 	clearScreen = ->
-		process.stdout.write '\u001B[2J\u001B[0;0f'
+		console.log '\u001B[2J\u001B[0;0f'
 
 	getTypeAtPointer = (obj) ->
 		return "arr[#{context.pointer.length}]"          if _.isArray(context.pointer)
@@ -45,6 +45,7 @@ exports.run = (cache) ->
 		readline.prompt()
 
 	processCommand = (line, callback) ->
+		return callback() unless line? and line.length > 0
 		args = line.match /("[^"]+"="[^"]+")|("[^"]+"=[^\s]+)|([^\s]+="[^"]+")|("[^"]+")|([^\s]+)/g
 		command = args.shift().toLowerCase()
 		handler = commands[command]
