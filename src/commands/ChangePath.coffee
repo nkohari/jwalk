@@ -24,7 +24,7 @@ class ChangePath extends Command
 
 		unless pointer?
 			console.log "Couldn't resolve path '#{path}'".red
-			callback()
+			return callback()
 
 		context.pointer = pointer
 		context.path = path
