@@ -7,7 +7,7 @@ class ChangePath extends Command
 		'navigates through nodes in the tree'
 
 	autocomplete: (context, str, callback) ->
-		super unless _.isObject(context.pointer)
+		return super unless _.isObject(context.pointer)
 		keys    = _.keys(context.pointer)
 		matches = _.filter keys, (key) -> key.indexOf(str) == 0
 		results = if matches.length > 0 then matches else keys
