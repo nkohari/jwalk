@@ -143,6 +143,18 @@ or
 jwalk obj{8} / $ quit
 ```
 
+## Preferences File
+
+You can create a JSON file at `~/.jwalk` to define preferences. Right now, all it supports is defining aliases for commands, like so:
+
+```json
+{
+  "aliases": {
+    "l": "ls"
+  }
+}
+```
+
 ## Contributing
 
 Bug reports and pull requests welcome!

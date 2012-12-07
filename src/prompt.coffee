@@ -4,12 +4,18 @@ _ = require 'underscore'
 
 commands = require './commands'
 
-exports.run = (tree) ->
+exports.run = (tree, config = {}) ->
 
 	context =
 		path: []
 		pointer: tree
 		tree: tree
+
+	util.inspect config
+
+	if config.aliases?
+		for alias, target of config.aliases
+			commands[alias] = commands[target]
 
 	getCompletions = (str, callback) ->
 		index = str.indexOf(' ')
