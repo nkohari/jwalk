@@ -49,7 +49,7 @@ Given the following json file
 }
 ````
 
-## Help
+### Help
 
 Shows this help message
 
@@ -66,7 +66,7 @@ ls examines a single node
 quit quit jwalk
 ```
 
-## List
+### List
 
 Examines the current node
 
@@ -88,7 +88,7 @@ jwalk obj{8} / $ ls
   engine: 'node >= 0.8.x' }
 ```
 
-## Change Directory
+### Change Directory
 
 Allows navigation through the JSON tree. Note 'cd' does support autocomplete by pressing the tab key.
 
@@ -101,7 +101,7 @@ jwalk obj{4} /dependencies $ ls
   underscore: '1.4.2' }
 ```
 
-## Clear
+### Clear
 
 Clears the screen
 
@@ -114,7 +114,7 @@ or
 jwalk obj{8} / $ cls
 ```
 
-## Keys
+### Keys
 
 Examines the keys of an object node
 
@@ -130,7 +130,7 @@ jwalk obj{8} / $ keys
   'engine' ]
 ```
 
-## Quit
+### Quit
 
 Exits the jwalk application
 
