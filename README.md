@@ -61,7 +61,7 @@ clear clears the screen
 cls clears the screen
 exit quit jwalk
 help shows this help message
-key sexamines the keys of an object node
+keys examines the keys of an object node
 ls examines a single node
 quit quit jwalk
 ```
