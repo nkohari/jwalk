@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>jwalk by nkohari</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>jwalk</h1>
+        <p>command-line json inspector</p>
+        <p class="view"><a href="https://github.com/nkohari/jwalk">View the Project on GitHub <small>nkohari/jwalk</small></a></p>
+        <ul>
+          <li><a href="https://github.com/nkohari/jwalk/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/nkohari/jwalk/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/nkohari/jwalk">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><strong>jwalk</strong> provides an easy way to inspect the object tree created by a JSON file via the command line.
+The interface provided is a lot like a typical shell, with familiar commands like <code>cd</code> and <code>ls</code>.</p>
+
+<h2>Installation</h2>
+
+<p>More documentation (and fewer bugs) coming soon. In the meantime, install it via npm:</p>
+
+<pre><code>npm install -g jwalk
+</code></pre>
+
+<h2>Running</h2>
+
+<p>And then run it like this:</p>
+
+<pre><code>jwalk somefile.json
+</code></pre>
+
+<p>It can also handle gzipped files. If the extension is .gz, it will decompress the JSON data automatically.</p>
+
+<pre><code>jwalk somefile.json.gz
+</code></pre>
+
+<h2>Possible Commands</h2>
+
+<p>Given the following json file</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"jwalk"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="o">:</span> <span class="s2">"0.0.4"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"command-line json inspector"</span><span class="p">,</span>
+  <span class="s2">"preferGlobal"</span><span class="o">:</span> <span class="s2">"true"</span><span class="p">,</span>
+  <span class="s2">"repositories"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"git"</span><span class="p">,</span>
+    <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"http://github.com/nkohari/jwalk"</span>
+  <span class="p">},</span>
+  <span class="s2">"bin"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"jwalk"</span><span class="o">:</span> <span class="s2">"bin/jwalk"</span>
+  <span class="p">},</span>
+  <span class="s2">"dependencies"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"coffee-script"</span><span class="o">:</span> <span class="s2">"1.4.0"</span><span class="p">,</span>
+    <span class="s2">"colors"</span><span class="o">:</span> <span class="s2">"0.6.0-1"</span><span class="p">,</span>
+    <span class="s2">"filesize"</span><span class="o">:</span> <span class="s2">"1.6.6"</span><span class="p">,</span>
+    <span class="s2">"underscore"</span><span class="o">:</span> <span class="s2">"1.4.2"</span>
+  <span class="p">},</span>
+  <span class="s2">"engine"</span><span class="o">:</span> <span class="s2">"node &gt;= 0.8.x"</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>Help</h3>
+
+<p>Shows this help message</p>
+
+<pre><code>jwalk obj{8} / $ help
+
+cd navigates through nodes in the tree
+clear clears the screen
+cls clears the screen
+exit quit jwalk
+help shows this help message
+keys examines the keys of an object node
+ls examines a single node
+quit quit jwalk
+</code></pre>
+
+<h3>List</h3>
+
+<p>Examines the current node</p>
+
+<pre><code>jwalk obj{8} / $ ls
+{ name: 'jwalk',
+  version: '0.0.4',
+  description: 'command-line json inspector',
+  preferGlobal: 'true',
+  repositories: 
+   { type: 'git',
+     url: 'http://github.com/nkohari/jwalk' },
+  bin: { jwalk: 'bin/jwalk' },
+  dependencies: 
+   { 'coffee-script': '1.4.0',
+     colors: '0.6.0-1',
+     filesize: '1.6.6',
+     underscore: '1.4.2' },
+  engine: 'node &gt;= 0.8.x' }
+</code></pre>
+
+<h3>Change Directory</h3>
+
+<p>Allows navigation through the JSON tree. Note 'cd' does support autocomplete by pressing the tab key.</p>
+
+<pre><code>jwalk obj{8} / $ cd dependencies
+jwalk obj{4} /dependencies $ ls
+{ 'coffee-script': '1.4.0',
+  colors: '0.6.0-1',
+  filesize: '1.6.6',
+  underscore: '1.4.2' }
+</code></pre>
+
+<h3>Clear</h3>
+
+<p>Clears the screen</p>
+
+<pre><code>jwalk obj{8} / $ clear
+</code></pre>
+
+<p>or</p>
+
+<pre><code>jwalk obj{8} / $ cls
+</code></pre>
+
+<h3>Keys</h3>
+
+<p>Examines the keys of an object node</p>
+
+<pre><code>jwalk obj{8} / $ keys
+[ 'name',
+  'version',
+  'description',
+  'preferGlobal',
+  'repositories',
+  'bin',
+  'dependencies',
+  'engine' ]
+</code></pre>
+
+<h3>Quit</h3>
+
+<p>Exits the jwalk application</p>
+
+<pre><code>jwalk obj{8} / $ exit
+</code></pre>
+
+<p>or</p>
+
+<pre><code>jwalk obj{8} / $ quit
+</code></pre>
+
+<h2>Preferences File</h2>
+
+<p>You can create a JSON file at <code>~/.jwalk</code> to define preferences. Right now, all it supports is defining aliases for commands, like so:</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">"aliases"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"l"</span><span class="p">:</span> <span class="s2">"ls"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2>Contributing</h2>
+
+<p>Bug reports and pull requests welcome!</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/nkohari">nkohari</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
