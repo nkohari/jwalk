@@ -3,7 +3,7 @@
 	"version": "0.0.4",
 	"description": "command-line json inspector",
 	"preferGlobal": "true",
-	"repositories": {
+	"repository": {
 		"type": "git",
 		"url": "http://github.com/nkohari/jwalk"
 	},
